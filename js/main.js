@@ -97,8 +97,8 @@ var sliderStory = new Swiper('.storyn-slider', {
         },
     });
 
-
-var sliderMain = new Swiper('.main-slider', {
+if ($('.main-slider').length) {
+    var sliderMain = new Swiper('.main-slider', {
         speed: 800,
         slidesPerView: 1,
         watchSlidesVisibility: true,
@@ -110,10 +110,10 @@ var sliderMain = new Swiper('.main-slider', {
           },
         spaceBetween: 20,
          pagination: {
-		    el: '.main-pagination',
-		    type: 'bullets',
-		    clickable: true,
-	  	},
+            el: '.main-pagination',
+            type: 'bullets',
+            clickable: true,
+        },
         breakpoints: {
             300: {
                 simulateTouch: true,
@@ -126,6 +126,10 @@ var sliderMain = new Swiper('.main-slider', {
             },
         },
     });
+}
+
+
+
 var sliderRelated = new Swiper('.related-slider', {
         speed: 800,
         slidesPerView: 4,

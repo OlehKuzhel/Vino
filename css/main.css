@@ -6660,6 +6660,12 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
 .section-main .main { position: relative; width: 100%; height: 100%; }
 
+.section-main .main-video { position: absolute; top: 0; right: 0; bottom: 0; width: 100%; height: 100%; z-index: -1; background: #2D2E3E; overflow: hidden; }
+
+.section-main .main-video video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; -o-object-fit: cover; object-fit: cover; pointer-events: none; }
+
+.section-main .main-video iframe { -webkit-transform: scale(1.3); -ms-transform: scale(1.3); transform: scale(1.3); -webkit-transform-origin: center center; -ms-transform-origin: center center; transform-origin: center center; position: absolute; top: 0; left: 0; bottom: 0; width: 100%; height: 100%; pointer-events: none; }
+
 .section-main .main-slider { width: 100%; height: 100%; }
 
 .section-main .main-slide img { width: 100%; height: 100%; -o-object-fit: cover; object-fit: cover; }
