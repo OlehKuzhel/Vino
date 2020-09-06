@@ -616,13 +616,16 @@ $('.field--age').datepicker({
     }
 })
 
-
+var $useragecheck = get_cookie ( "userage" );
+if ($useragecheck != 'ok') {
     $.fancybox.open({
         src: '#age',
         type: 'inline',
-        // opts: opnsFancy,
         opts: opnsage,
     });
+}
+
+    
 
 $('.checkage').on('submit', function(event) {
     event.preventDefault();
@@ -633,7 +636,8 @@ $('.checkage').on('submit', function(event) {
     $fields = $('.checkage').find('.field--age')
     
     if ($minus >= 18) {
-        $.fancybox.close()
+        $.fancybox.close();
+        document.cookie = "userage=ok"
     } else {
         $fields.each(function(index, el) {
             $(el).addClass('error')
@@ -645,6 +649,35 @@ $('.checkage').on('submit', function(event) {
         }, 500)
     }
 
+});
+
+
+function get_cookie ( cookie_name )
+{
+  var results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
+ 
+  if ( results )
+    return ( unescape ( results[2] ) );
+  else
+    return null;
+}
+
+// форма подписки в футере
+
+$('.form-subscribe').on('submit', function(event) {
+    event.preventDefault();
+    var _form = $(this),
+        th = _form.serialize(),
+        form_url = _form.attr('action');
+     $.ajax({ 
+            url : 'вставь тут обработчик',
+            data : th,
+            cache: false,
+            type : 'POST',
+            success : function( data ){
+               $(this).find('.btn--submit').addClass('send')
+        }
+    });
 });
 
 
