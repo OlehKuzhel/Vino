@@ -611,7 +611,7 @@ $('.field--age').datepicker({
         $('.pickerday').val($split[1])
         $('.pickermonth').val($split[0])
         $('.pickeryear').val($split[2])
-        $('.checkage').attr('data-date', d)
+        $('.checkage').attr('data-date', fd)
 
     }
 })
@@ -634,6 +634,8 @@ $('.checkage').on('submit', function(event) {
     var dateC = moment();
     $minus = dateC.diff(dateB, 'year')
     $fields = $('.checkage').find('.field--age')
+
+    console.log(dateC)
     
     if ($minus >= 18) {
         $.fancybox.close();
