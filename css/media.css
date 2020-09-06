@@ -55,6 +55,13 @@
   .h2-n { font-size: 2.7rem; }
   .h2-s { font-size: 2.7rem; }
   .h3-f { font-size: 1.8rem; }
+  .section-contact { padding-top: 10rem; }
+  .section-contact .contact-form .form-submit { margin: 0 auto; max-width: 100%; }
+  .section-contact .contact-form .form-submit .btn--submit { max-width: 100%; font-size: 2rem; }
+  .section-contact .contact-form .form-row { -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; margin-bottom: 3rem; }
+  .section-contact .contact-form .form-field { max-width: 100%; }
+  .section-contact .contact-form .form-field + .form-field { margin-top: 3rem; }
+  .section-contact .contact-form .form-field .field--select .jq-selectbox__select-text { text-align: left; }
   .section-specialpr { padding: 11rem 0 3rem 0; }
   .section-specialpr .specialpr { padding-top: 0; grid-template-columns: 1fr; grid-template-areas: "name" "photo" "info"; }
   .section-specialpr .specialpr-photo { height: 51rem; margin-bottom: 3rem; }

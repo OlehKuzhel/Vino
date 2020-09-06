@@ -681,10 +681,32 @@ $('.form-subscribe').on('submit', function(event) {
             cache: false,
             type : 'POST',
             success : function( data ){
-               $(this).find('.btn--submit').addClass('send')
+               _form.find('.btn--submit').addClass('send')
         }
     });
 });
+
+// форма на странице контактов
+
+$('.form-contact').on('submit', function(event) {
+    event.preventDefault();
+    var _form = $(this),
+        th = _form.serialize(),
+        form_url = _form.attr('action');
+     $.ajax({ 
+            url : 'вставь тут обработчик',
+            data : th,
+            cache: false,
+            type : 'POST',
+            success : function( data ){
+               _form.find('.btn--submit').addClass('send')
+        }
+    });
+});
+
+$('select').styler({
+    // selectPlaceholder: ''
+})
 
 
 
