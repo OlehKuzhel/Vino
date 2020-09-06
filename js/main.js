@@ -458,24 +458,15 @@ var sliderRelated = new Swiper('.related-slider', {
  opnsage = {
         touch: false,
         baseClass: "modal",
-        beforeLoad: function(instance, slide) {
-            if (isMobile == false) {} else {}
-        },
-        afterShow: function(instance, current) {
-        },
-        afterLoad: function(instance, current) {
-        },
-        afterClose: function(instance, slide) {
-        },
-        hideScrollbar: true,
-        btnTpl: {
-            smallBtn: false,
-        },
+        clickSlide: false,
+        keyboard: false,
+        clickOutside: false,
     }
 
  opnsFancy = {
         touch: false,
         baseClass: "modal",
+
         beforeLoad: function(instance, slide) {
             if (isMobile == false) {} else {}
         },
@@ -504,11 +495,13 @@ $('body').on('click', '.fancybtn', function(event) {
             src: popup,
             type: 'inline',
             // opts: opnsFancy,
-            opts: opnsage,
+            opts: opnsFancy,
         });
         return false
     });
 
+
+   
 
 
 if ($('.section-header').hasClass('header-category')) {
@@ -594,7 +587,65 @@ var sliderDiscover = new Swiper('.discover-slider', {
     });
 
 
+ $.fn.datepicker.language['en'] = {
+    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    daysMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+    months: ['January','February','March','April','May','June', 'July','August','September','October','November','December'],
+    monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    today: 'Today',
+    clear: 'Clear',
+    dateFormat: 'mm.dd.yyyy',
+    timeFormat: 'hh:ii aa',
+    firstDay: 0
+}; 
 
+$('.field--age').datepicker({
+ minView: 'days',
+ language: 'en',
+ maxDate: new Date(),
+        view: 'years',
+       onSelect: function(fd, d, picker) {
+        console.log(fd)
+        $split = fd.split('.')
+        $('.pickerday').val($split[1])
+        $('.pickermonth').val($split[0])
+        $('.pickeryear').val($split[2])
+        $('.checkage').attr('data-date', d)
+
+    }
+})
+
+
+    $.fancybox.open({
+        src: '#age',
+        type: 'inline',
+        // opts: opnsFancy,
+        opts: opnsage,
+    });
+
+$('.checkage').on('submit', function(event) {
+    event.preventDefault();
+    $selectdate = $(this).attr('data-date')
+    var dateB = moment($selectdate, "MM.DD.YYYY");
+    var dateC = moment();
+    $minus = dateC.diff(dateB, 'year')
+    $fields = $('.checkage').find('.field--age')
+    
+    if ($minus >= 18) {
+        $.fancybox.close()
+    } else {
+        $fields.each(function(index, el) {
+            $(el).addClass('error')
+        });
+        setTimeout(function() {
+            $fields.each(function(index, el) {
+                $(el).removeClass('error')
+            });
+        }, 500)
+    }
+
+});
 
 
 
