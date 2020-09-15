@@ -6317,6 +6317,16 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
 .link--trademark:hover span:after { width: 100%; }
 
+.link--winery { color: #161c21; font-size: 1.8rem; font-weight: 400; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; line-height: 2.2rem; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+
+.link--winery img { max-width: 29.5rem; width: 100%; height: 14.3rem; -o-object-fit: cover; object-fit: cover; }
+
+.link--winery span { display: block; position: relative; margin-top: 1rem; }
+
+.link--winery span:after { position: absolute; bottom: 0; width: 0; height: 1px; background: #161c21; left: 0; -webkit-transition: 0.24s ease; -o-transition: 0.24s ease; transition: 0.24s ease; content: ''; }
+
+.link--winery:hover span:after { width: 100%; }
+
 .link--story { color: #161c21; font-size: 1.8rem; font-weight: 400; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; line-height: 2.2rem; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
 
 .link--story img { max-width: 29.5rem; width: 100%; height: 14.3rem; -o-object-fit: cover; object-fit: cover; }
@@ -6677,7 +6687,7 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
 .section-vertical .vertical-slide__grid .h4:after { width: 100%; bottom: .5rem; left: 0; height: 1px; background: #161c21; content: ''; position: absolute; }
 
-.section-vertical .vertical-slide__grid .p-v { margin-top: auto; grid-area: text; color: #000000; font-family: "FiraGO", sans-serif; font-size: 2rem; font-weight: 400; line-height: 3rem; }
+.section-vertical .vertical-slide__grid .p-v { margin-top: auto; grid-area: text; color: #000000; font-family: "FiraGO", sans-serif; font-size: 2rem; font-weight: 400; line-height: 3rem; padding-bottom: 9rem; }
 
 .section-vertical .vertical-slide__photo { grid-area: photo; width: 100%; height: 100%; }
 
@@ -6716,6 +6726,12 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 .section-header .header-submenu .trademark-slide { max-width: 10rem; width: 100%; }
 
 .section-header .header-submenu .trademark-content { padding-left: 0; padding-right: 0; }
+
+.section-header .header-submenu .winery { padding: 1.5rem 0; }
+
+.section-header .header-submenu .winery-slide { max-width: 29.5rem; width: 100%; }
+
+.section-header .header-submenu .winery-content { padding-left: 19rem; padding-right: 19rem; }
 
 .section-header .header-submenu .story { padding: 1.5rem 0; }
 

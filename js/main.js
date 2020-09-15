@@ -198,13 +198,24 @@ var sliderRelated = new Swiper('.related-slider', {
             },
         },
         on: {
-            slideChangeTransitionStart: function () {
+            
+            progress:  function (progress) {
+                if (isMobile != true) {
+                    if (progress == 0 || progress == 1) {
+                        $('.related-product').removeClass('trans')
+                    } else {
+                        $('.related-product').addClass('trans')
+                    }
+                }
+            },
+            transitionStart: function () {
                 if (isMobile != true) {
                     $('.related-product').addClass('trans')
                 }
+                // console.log('asdasdasd')
               
             },
-            slideChangeTransitionEnd: function () {
+            transitionEnd: function () {
                 if (isMobile != true) {
                     $('.related-product').removeClass('trans')
                 }
@@ -363,13 +374,11 @@ var sliderRelated = new Swiper('.related-slider', {
     });
 
      var sliderWinery = new Swiper('.winery-slider', {
-        speed: 800,
-        slidesPerView: 2.5,
+         speed: 800,
+        slidesPerView: 'auto',
         simulateTouch: false,
         watchSlidesVisibility: true,
-        spaceBetween: 0,
-        loop: true,
-        centeredSlides: true,
+        spaceBetween: 60,
         navigation: {
             nextEl: '.winery--next',
             prevEl: '.winery--prev',
