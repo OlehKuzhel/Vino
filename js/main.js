@@ -659,11 +659,11 @@ $('.field--age').datepicker({
 
 var $useragecheck = get_cookie ( "userage" );
 if ($useragecheck != 'ok') {
-    $.fancybox.open({
-        src: '#age',
-        type: 'inline',
-        opts: opnsage,
-    });
+    // $.fancybox.open({
+    //     src: '#age',
+    //     type: 'inline',
+    //     opts: opnsage,
+    // });
 }
 
     
@@ -745,6 +745,28 @@ $('select').styler({
     // selectPlaceholder: ''
 })
 
+
+   $('body').on('change', 'select[name="country_partner"]', function(event) {
+        // console.log("change")
+        var url = $(this).data('get_reg_url');
+        var country_id = $(this).val();
+        var data = {
+            "_token":$('meta[name="csrf-token"]').attr('content'),
+            "country_id":country_id
+        };
+        // console.log(data)
+        $.ajax({
+            type: "POST",
+            data: data,
+            url: url,
+            success: function(data) {
+                $('select[name="region_partner"]').html(data).trigger('refresh')
+                // console.log(data)
+
+
+            },
+        });
+    });
 
 
 });

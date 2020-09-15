@@ -6201,6 +6201,8 @@ input[type='button'].styler[disabled], input[type='submit'].styler[disabled] { b
 
 @font-face { font-family: "Noto Sans"; font-weight: 700; font-style: normal; font-display: swap; src: url("../fonts/notosans/NotoSans-Bold.eot"); src: url("../fonts/notosans/NotoSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/notosans/NotoSans-Bold.woff") format("woff"), url("../fonts/notosans/NotoSans-Bold.ttf") format("truetype"); }
 
+@font-face { font-family: "Hello Santuy"; font-weight: 400; font-style: normal; font-display: swap; src: url("../fonts/hello/HelloSantuy.eot"); src: url("../fonts/hello/HelloSantuy.eot?#iefix") format("embedded-opentype"), url("../fonts/hello/HelloSantuy.woff") format("woff"), url("../fonts/hello/HelloSantuy.ttf") format("truetype"); }
+
 *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0; }
 
 * { -webkit-box-sizing: border-box; box-sizing: border-box; }
@@ -7005,7 +7007,9 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
 .section-category .category-item__name:after { position: absolute; bottom: 0; width: 0; height: 1px; background: #161c21; left: 0; -webkit-transition: 0.24s ease; -o-transition: 0.24s ease; transition: 0.24s ease; content: ''; }
 
-.section-category .category-item:hover span:after { width: 100%; }
+.section-category .category-item:hover span { color: #945b38; }
+
+.section-category .category-item:hover span:after { width: 100%; background: #945b38; }
 
 .section-category .category-pagination { display: none; }
 
@@ -7079,7 +7083,7 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
 .section-product .product { position: relative; padding-top: 6rem; display: grid; grid-template-columns: 114rem 1fr; grid-template-areas: "photo name" "photo info"; }
 
-.section-product .product .h4-sub { color: #161c21; text-align: center; margin-top: 2.5rem; font-size: 3.7rem; font-family: "Noto Sans", sans-serif; font-weight: 400; }
+.section-product .product .h4-sub { color: #161c21; text-align: center; margin-top: 2.5rem; font-size: 3.7rem; font-family: "Hello Santuy"; font-weight: 400; }
 
 .section-product .product-ben { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; margin-top: 4rem; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
 
@@ -7149,7 +7153,7 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
 .section-specialpr .specialpr-info { grid-area: info; }
 
-.section-specialpr .specialpr-info__content { position: relative; margin-bottom: 3rem; max-width: 55rem; height: auto; -webkit-transition: 0.24s ease; -o-transition: 0.24s ease; transition: 0.24s ease; }
+.section-specialpr .specialpr-info__content { position: relative; margin-bottom: 3rem; max-width: 38rem; height: auto; -webkit-transition: 0.24s ease; -o-transition: 0.24s ease; transition: 0.24s ease; }
 
 .section-specialpr .specialpr-info__content .p { color: #ffffff; font-family: "FiraGO", sans-serif; font-size: 2rem; font-weight: 400; line-height: 3.5rem; }
 
