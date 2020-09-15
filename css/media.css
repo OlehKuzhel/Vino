@@ -22,7 +22,10 @@
   .empty { width: 3.4rem; display: block; }
   .btn--submit { font-size: 1.6rem; }
   .btn--age { font-size: 1.6rem; max-width: 27rem; margin: 0 auto; }
-  .field { font-size: 1.6rem; }
+  .field { font-size: 1.6rem; text-align: center; }
+  .field--select .jq-selectbox__select-text { text-align: center; font-size: 1.6rem; }
+  .field--select .jq-selectbox__trigger { width: 2.1rem; }
+  .field--select .jq-selectbox__trigger-arrow { width: 2.1rem; }
   .popup-age { padding: 3rem 1.5rem; }
   .popup-age .popup-content .h3-p { font-size: 1.6rem; margin: 2.5rem 0; }
   .popup-age .popup-content .p-a { font-size: 1.6rem; text-align: center; }
@@ -41,6 +44,12 @@
   .mobile-lang a:first-child { padding-left: 0; }
   .mobile-lang a:last-child { padding-right: 0; border: none; }
   .mobile-lang a.active { opacity: 1; }
+  .navigation-post { padding: 1.5rem 0 4rem 0; }
+  .navigation-post .wrapper { padding: 0 3rem; }
+  .navigation-post__content .link { font-size: 1.6rem; }
+  .navigation-post__content .link svg { width: .7rem; height: 1.9rem; }
+  .link--play { width: 6.5rem; height: 6.5rem; }
+  .link--play svg { width: 2.6rem; height: 2.9rem; margin-left: 0.75rem; }
   .link--closemenu { width: 2.2rem; height: 2.2rem; position: absolute; top: 3.5rem; left: 1.5rem; }
   .link--closemenu svg { width: 100%; height: 100%; display: block; }
   .link--closemenu svg path { fill: #161e24; }
@@ -56,12 +65,21 @@
   .h2-s { font-size: 2.7rem; }
   .h3-f { font-size: 1.8rem; }
   .section-contact { padding-top: 10rem; }
+  .section-contact .contact-partner { padding: 4.5rem 0 3.5rem 0; }
+  .section-contact .contact-partner .h3p { font-size: 1.8rem; margin-bottom: 2rem; }
+  .section-contact .contact-partner__selects { margin-bottom: 3.5rem; }
+  .section-contact .contact-partner__answer .p--par { font-size: 1.6rem; }
+  .section-contact .contact-partner__col { max-width: 26.5rem; width: 100%; margin-bottom: 2rem; margin-left: auto; margin-right: auto; }
+  .section-contact .contact-partner__col .field--select .jq-selectbox__trigger { width: 1.5rem; }
+  .section-contact .contact-partner__col .field--select .jq-selectbox__trigger-arrow { width: 1.5rem; -webkit-background-size: 1.5rem .8rem; background-size: 1.5rem .8rem; }
+  .section-contact .contact-partner__col .field--select .jq-selectbox__select-text { font-size: 1.4rem; }
+  .section-contact .contact-form { padding-bottom: 0; border: none; }
   .section-contact .contact-form .form-submit { margin: 0 auto; max-width: 100%; }
-  .section-contact .contact-form .form-submit .btn--submit { max-width: 100%; font-size: 2rem; }
-  .section-contact .contact-form .form-row { -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; margin-bottom: 3rem; }
+  .section-contact .contact-form .form-submit .btn--submit { max-width: 9rem; margin-left: auto; padding: 1rem 0; font-size: 2rem; }
+  .section-contact .contact-form .form-row { -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; margin-bottom: 2rem; }
   .section-contact .contact-form .form-field { max-width: 100%; }
+  .section-contact .contact-form .form-field .plabel { font-size: 1.8rem; text-align: center; }
   .section-contact .contact-form .form-field + .form-field { margin-top: 3rem; }
-  .section-contact .contact-form .form-field .field--select .jq-selectbox__select-text { text-align: left; }
   .section-specialpr { padding: 11rem 0 3rem 0; }
   .section-specialpr .specialpr { padding-top: 0; grid-template-columns: 1fr; grid-template-areas: "name" "photo" "info"; }
   .section-specialpr .specialpr-photo { height: 51rem; margin-bottom: 3rem; }
@@ -145,12 +163,32 @@
   .section-winery .winery-photo { height: 37rem; margin-bottom: 2.5rem; }
   .section-winery .winery-row { -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; padding: 0 3rem; }
   .section-winery .winery-row .p { font-size: 1.6rem; max-width: 100%; line-height: 2rem; }
+  .section-partners { padding: 8rem 0 6rem 0; }
+  .section-partners .partners-item__content { -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; text-align: center; padding: 4rem 0; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+  .section-partners .partners-item__number { max-width: 100%; margin: 0; }
+  .section-partners .partners-item__number .p { line-height: 9rem; }
+  .section-partners .partners-item__title { max-width: 100%; margin: 0; }
+  .section-partners .partners-item__title h3 { font-size: 2.6rem; }
+  .section-partners .partners-item__where { max-width: 100%; margin: 0; padding: 0 0; height: 0; overflow: hidden; }
+  .section-partners .partners-item__where .p { font-size: 1.4rem; text-align: center; line-height: 2rem; }
+  .section-partners .partners-item__who { max-width: 100%; margin: 0; padding: 0 1.5rem; height: 0; overflow: hidden; }
+  .section-partners .partners-item__who .p { font-size: 1.8rem; text-align: center; line-height: 2rem; }
+  .section-partners .partners-item__link { max-width: 100%; margin: 0; height: 0; overflow: hidden; }
+  .section-partners .partners-item__link .link { width: 0; height: 0; margin: 0 auto; }
+  .section-partners .partners-item__link .link .text { display: none; }
+  .section-partners .partners-item__link .link .icon { display: block; width: 100%; height: 100%; }
+  .section-partners .partners-item__link .link .icon svg { display: block; width: 100%; height: 100%; }
+  .section-partners .partners-item:hover .partners-item__title { margin: 0 0 1.5rem 0; }
+  .section-partners .partners-item:hover .partners-item__link { height: auto; margin: 1.5rem 0 0 0; }
+  .section-partners .partners-item:hover .partners-item__link .link { width: 3.5rem; height: 3.5rem; }
+  .section-partners .partners-item:hover .partners-item__where { height: auto; margin: .5rem 0 0 0; }
+  .section-partners .partners-item:hover .partners-item__who { height: auto; }
   .section-blog { padding: 8rem 0 6rem 0; }
   .section-blog .blog-item__content { -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; text-align: center; border: none; padding: 3rem 0; }
   .section-blog .blog-item__number { max-width: 100%; margin: 0; }
   .section-blog .blog-item__number .p { line-height: 9rem; }
   .section-blog .blog-item__title { max-width: 100%; margin: 3rem 0 2rem 0; }
-  .section-blog .blog-item__title .h3 { font-size: 2.6rem; }
+  .section-blog .blog-item__title a { font-size: 2.6rem; }
   .section-blog .blog-item__text { max-width: 100%; margin: 0; padding: 0 1.5rem; }
   .section-blog .blog-item__text .p { font-size: 1.6rem; text-align: left; line-height: 2rem; }
   .section-blog .blog-item__date { max-width: 100%; margin: 2rem 0 0 0; }
@@ -213,6 +251,21 @@
   .section-storyn .storyn-side { margin: 2.5rem 0; height: 37rem; }
   .section-storyn .storyn-content { padding: 0 3rem; }
   .section-storyn .storyn-content .p { margin-top: 0; font-size: 1.6rem; line-height: 2rem; }
+  .section-evsingle { padding: 10rem 0 3rem 0; }
+  .section-evsingle .wrapper { padding: 0; }
+  .section-evsingle .evsingle-title { padding: 0 1.5rem; }
+  .section-evsingle .evsingle-title:after { bottom: 0; max-width: 31rem; left: 1.5rem; }
+  .section-evsingle .evsingle-title .h2s { font-size: 4.2rem; line-height: 1; }
+  .section-evsingle .evsingle-title .h2s span { font-size: 2rem; }
+  .section-evsingle .evsingle-row { -webkit-box-orient: vertical; -webkit-box-direction: reverse; -webkit-flex-direction: column-reverse; -ms-flex-direction: column-reverse; flex-direction: column-reverse; }
+  .section-evsingle .evsingle-side { margin: 2.5rem 0; height: 37rem; }
+  .section-evsingle .evsingle-side .link--nav { display: none; }
+  .section-evsingle .evsingle-content { padding: 0 3rem; }
+  .section-evsingle .evsingle-content .p { margin-top: 0; font-size: 1.6rem; margin-bottom: 0; line-height: 2rem; }
+  .section-evvideo .wrapper { padding: 0; }
+  .section-evvideo .evvideo-frame { height: 21rem; }
+  .section-evvideo .evvideo-content { padding: 3rem; }
+  .section-evvideo .evvideo-content .p { font-size: 1.6rem; margin-bottom: 0; line-height: 2rem; }
   .section-responsibility { padding-top: 0; padding-bottom: 4.5rem; }
   .section-responsibility .wrapper { padding: 0; }
   .section-responsibility .responsibility-title { padding: 0 1.5rem; }

@@ -71,6 +71,34 @@ var sliderTabs = new Swiper('.works-tabs-slider', {
         navigation: false,
     });
 
+var sliderEvsingle = new Swiper('.evsingle-slider', {
+        speed: 800,
+        slidesPerView: 1,
+        watchSlidesVisibility: true,
+        simulateTouch: false,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.evsingle--next',
+            prevEl: '.evsingle--prev',
+        },
+         pagination: {
+            el: '.evsingle-pagination',
+            type: 'bullets',
+            clickable: true,
+        },
+        breakpoints: {
+            300: {
+                simulateTouch: true,
+                spaceBetween: 0,
+                slidesPerView: 1,
+            },
+            1024: {
+                simulateTouch: false,
+                spaceBetween: 20,
+            },
+        },
+    });
+
 var sliderStory = new Swiper('.storyn-slider', {
         speed: 800,
         slidesPerView: 1,
@@ -622,11 +650,11 @@ $('.field--age').datepicker({
 
 var $useragecheck = get_cookie ( "userage" );
 if ($useragecheck != 'ok') {
-    $.fancybox.open({
-        src: '#age',
-        type: 'inline',
-        opts: opnsage,
-    });
+    // $.fancybox.open({
+    //     src: '#age',
+    //     type: 'inline',
+    //     opts: opnsage,
+    // });
 }
 
     
