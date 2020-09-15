@@ -6445,6 +6445,12 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
 .link--nav.related--prev svg { -webkit-transform: rotate(180deg); -ms-transform: rotate(180deg); transform: rotate(180deg); }
 
+.link--nav.storyn--next { position: absolute; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); right: 2rem; }
+
+.link--nav.storyn--prev { position: absolute; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); left: 2rem; }
+
+.link--nav.storyn--prev svg { -webkit-transform: rotate(180deg); -ms-transform: rotate(180deg); transform: rotate(180deg); }
+
 .link--nav.evsingle--next { position: absolute; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); right: 2rem; }
 
 .link--nav.evsingle--prev { position: absolute; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); left: 2rem; }
@@ -6571,17 +6577,17 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
 .section-partners .partners-item__title h3 { -webkit-transition: 0.24s ease; -o-transition: 0.24s ease; transition: 0.24s ease; display: block; color: #000000; font-family: "FiraGO", sans-serif; font-size: 3.5rem; font-weight: 700; text-transform: uppercase; }
 
-.section-partners .partners-item__where { max-width: 35rem; width: 100%; opacity: 0; -webkit-transition: 0.24s ease; -o-transition: 0.24s ease; transition: 0.24s ease; visibility: hidden; }
+.section-partners .partners-item__where { max-width: 35rem; width: 100%; }
 
-.section-partners .partners-item__where .p { -webkit-transition: 0.24s ease; -o-transition: 0.24s ease; transition: 0.24s ease; color: #fff; font-family: "FiraGO", sans-serif; font-size: 2rem; font-weight: 300; }
+.section-partners .partners-item__where .p { -webkit-transition: 0.24s ease; -o-transition: 0.24s ease; transition: 0.24s ease; color: #000000; font-family: "FiraGO", sans-serif; font-size: 2rem; font-weight: 300; }
 
-.section-partners .partners-item__who { max-width: 16rem; width: 100%; opacity: 0; -webkit-transition: 0.24s ease; -o-transition: 0.24s ease; transition: 0.24s ease; visibility: hidden; }
+.section-partners .partners-item__who { max-width: 16rem; width: 100%; }
 
-.section-partners .partners-item__who .p { -webkit-transition: 0.24s ease; -o-transition: 0.24s ease; transition: 0.24s ease; color: #fff; font-family: "FiraGO", sans-serif; font-size: 2rem; font-weight: 400; line-height: 1.8rem; }
+.section-partners .partners-item__who .p { -webkit-transition: 0.24s ease; -o-transition: 0.24s ease; transition: 0.24s ease; color: #000000; font-family: "FiraGO", sans-serif; font-size: 2rem; font-weight: 400; line-height: 1.8rem; }
 
-.section-partners .partners-item__link { max-width: 17rem; width: 100%; margin-left: auto; opacity: 0; -webkit-transition: 0.24s ease; -o-transition: 0.24s ease; transition: 0.24s ease; visibility: hidden; }
+.section-partners .partners-item__link { max-width: 17rem; width: 100%; margin-left: auto; }
 
-.section-partners .partners-item__link .link { -webkit-transition: 0.24s ease; -o-transition: 0.24s ease; transition: 0.24s ease; font-family: "FiraGO", sans-serif; font-size: 2rem; font-weight: 400; color: #dfd3bd; }
+.section-partners .partners-item__link .link { -webkit-transition: 0.24s ease; -o-transition: 0.24s ease; transition: 0.24s ease; font-family: "FiraGO", sans-serif; font-size: 2rem; font-weight: 400; color: #000000; }
 
 .section-partners .partners-item__link .link .icon { display: none; }
 
@@ -6591,11 +6597,11 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
 .section-partners .partners-item:hover .partners-item__content h3 { color: #fff; }
 
-.section-partners .partners-item:hover .partners-item__link { opacity: 1; visibility: visible; }
+.section-partners .partners-item:hover .partners-item__link .link { color: #dfd3bd; }
 
-.section-partners .partners-item:hover .partners-item__where { opacity: 1; visibility: visible; }
+.section-partners .partners-item:hover .partners-item__where .p { color: #fff; }
 
-.section-partners .partners-item:hover .partners-item__who { opacity: 1; visibility: visible; }
+.section-partners .partners-item:hover .partners-item__who .p { color: #fff; }
 
 .section-partners .partners-pagination { display: block; margin-top: 5rem; }
 
