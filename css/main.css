@@ -7215,7 +7215,7 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
 .section-discover .discover-slide .link--product span { font-size: 2.4rem; }
 
-.section-discover .discover-product { max-width: 114rem; width: 100%; position: relative; }
+.section-discover .discover-product { max-width: 135rem; width: 100%; position: relative; }
 
 .section-discover .discover-product:before { background-image: -webkit-gradient(linear, right top, left top, from(#ffffff), color-stop(13%, #ffffff), to(rgba(255, 255, 255, 0))); background-image: -webkit-linear-gradient(right, #ffffff 0%, #ffffff 13%, rgba(255, 255, 255, 0) 100%); background-image: -o-linear-gradient(right, #ffffff 0%, #ffffff 13%, rgba(255, 255, 255, 0) 100%); background-image: linear-gradient(to left, #ffffff 0%, #ffffff 13%, rgba(255, 255, 255, 0) 100%); content: ''; position: absolute; top: 0; right: 0; width: 10rem; z-index: 3; pointer-events: none; height: 100%; opacity: 0; -webkit-transition: 0.24s ease; -o-transition: 0.24s ease; transition: 0.24s ease; }
 
@@ -7225,7 +7225,7 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
 .section-discover .discover-product.trans:before { opacity: 1; }
 
-.section-discover .discover-content { text-align: center; max-width: 57rem; width: 100%; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+.section-discover .discover-content { text-align: center; max-width: 31rem; width: 100%; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
 
 .section-discover .discover-content .link { font-size: 2.2rem; font-family: "Arapey", serif; }
 

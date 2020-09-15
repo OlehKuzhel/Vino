@@ -589,7 +589,7 @@ var sliderDiscover = new Swiper('.discover-slider', {
             300: {
                 simulateTouch: true,
                 spaceBetween: 20,
-                slidesPerView: 1.95,
+                slidesPerView: 2.05,
                 centeredSlides: true,
             },
             
