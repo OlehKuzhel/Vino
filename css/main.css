@@ -6845,7 +6845,7 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
 .section-header.hover-special .header-container:after { background: #ffffff; }
 
-.section-header.hover-special .header-lang__dropdown { background: #fff; }
+.section-header.hover-special .header-lang__dropdown { background: #161c21; }
 
 .section-header.hover-special .header .link--logo svg path { fill: #ffffff; }
 
