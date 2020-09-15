@@ -659,11 +659,11 @@ $('.field--age').datepicker({
 
 var $useragecheck = get_cookie ( "userage" );
 if ($useragecheck != 'ok') {
-    // $.fancybox.open({
-    //     src: '#age',
-    //     type: 'inline',
-    //     opts: opnsage,
-    // });
+    $.fancybox.open({
+        src: '#age',
+        type: 'inline',
+        opts: opnsage,
+    });
 }
 
     
