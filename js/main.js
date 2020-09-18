@@ -34,14 +34,22 @@ var isMobile = false;
         var sliderVertical = new Swiper('.vertical-slider', {
         speed: 800,
         slidesPerView: 1,
-        simulateTouch: true,
-        // watchSlidesVisibility: true,
-        spaceBetween: 20,
+        direction: 'vertical',
+        // simulateTouch: true,
+        cssMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        spaceBetween: 60,
+        // freeMode: true,
         pagination: {
             el: '.vertical-pagination',
             type: 'bullets',
             clickable: true,
         },
+        mousewheel: true,
+        mousewheel: {
+            releaseOnEdges: true,
+          },
         // loop: true,
         // centeredSlides: true,
         // navigation: {
