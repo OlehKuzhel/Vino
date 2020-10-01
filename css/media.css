@@ -223,6 +223,7 @@
   .section-header .header-menu { display: none; }
   .section-header .header-submenu { display: none; }
   .section-header .header-lang { display: none; }
+  .section-header.header-category .header .link--mobile svg path { stroke: #161c21; }
   .section-header.black .header { padding: 1.5rem 0; }
   .section-header.black .header-content .link--logo { margin-top: 0; }
   .section-header.black .header .link--mobile svg path { stroke: #161c21; }
