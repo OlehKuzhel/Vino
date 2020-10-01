@@ -249,71 +249,23 @@ var sliderRelated = new Swiper('.related-slider', {
         }
     });
 
-    $('body').on('click', '.link--select', function(event) {
-        event.preventDefault();
-        $(this).toggleClass('active');
-        $('.header-lang__dropdown').toggleClass('active');
-    });
-
-    // $('.hascat').hover(function(e) {
-
-    //     $('header').addClass('hover')
-    // }, function(e) {
-    //      submenu = $(".header-submenu");
-    //      console.log(e.target)
-    //     if (!submenu.is(e.target) && submenu.has(e.target).length === 0) { // и не по его дочерним элементам
-    //         // submenu.hide(); // скрываем его
-    //         $('header').removeClass('hover')
-    //     }
-    // });
-    submenu = $(".header-submenu");
-    mainmenu = $(".hascat");
-    mainmenu.on('mouseover', function(e) {
-        event.preventDefault();
-        $('header').addClass('hover')
-        $(".link--menu").removeClass('active')
-        $(this).addClass('active')
-        $menu = $(this).attr('data-submenu')
-        if ($menu == 'special') {
+    $(".hascat").hover(function() {
+        $menu = $(this);
+        $('header').addClass('hover');
+        if ($menu.hasClass('special')) {
             $('header').addClass('hover-special')
-        }
-        $('[data-cat='+$menu+']').addClass('active')
-    });
-
-    mainmenu.on('mouseout', function(e) {
-        event.preventDefault();
-        if (!submenu.is(e.relatedTarget) && submenu.has(e.relatedTarget).length === 0) { // и не по его дочерним элементам
-            $('header').removeClass('hover hover-special')
-            $(".hascat").removeClass('active')
-            $(".link--menu").removeClass('active')
-            $('.header-submenu__item').removeClass('active')
         } else {
-            $menu = $(this).attr('data-submenu')
-            if ($menu == 'special') {
-                $('header').addClass('hover-special')
-            }
-            $('[data-cat='+$menu+']').addClass('active')
+            $('header').removeClass('hover-special')
         }
+        $('body').addClass('overlay')
+    }, function() {
+       $('body').removeClass('overlay')
+       $('header').removeClass('hover')
+       $('header').removeClass('hover-special')
     });
+    
 
-     submenu.on('mouseover', function(e) {
-        event.preventDefault();
-        // if (!mainmenu.is(e.relatedTarget) && mainmenu.has(e.relatedTarget).length === 0) {
-        //     $(".link--menu").removeClass('active')
-        // }
-            if (!$('header').hasClass('hover')) {
-                $('header').addClass('hover')
-            }
-            
-        // }
-    });
 
-    submenu.on('mouseout', function(e) {
-        event.preventDefault();
-        if (!mainmenu.is(e.relatedTarget) && mainmenu.has(e.relatedTarget).length === 0) {
-            $('header').removeClass('hover')
-        }
-    });
 
     $(window).on('scroll', function(event) {
         var height = $(window).scrollTop(),
@@ -373,9 +325,15 @@ var sliderRelated = new Swiper('.related-slider', {
         },
     });
 
+     wrapper = $('.wrapper')
+    marginLeftWrapper = parseInt(wrapper.css('marginLeft'))
+    paddingLeftWrapper = parseInt(wrapper.css('paddingLeft'))
+    $nowfz = parseInt($('html').css('font-size'))
+
      var sliderSpecial = new Swiper('.special-slider', {
         speed: 800,
-        slidesPerView: 1,
+        // slidesPerView: 1,
+        slidesPerView: 2.6,
         simulateTouch: false,
         watchSlidesVisibility: true,
         spaceBetween: 0,
@@ -399,15 +357,37 @@ var sliderRelated = new Swiper('.related-slider', {
 
      var sliderProduct = new Swiper('.product-slider', {
         speed: 800,
-        slidesPerView: 2.5,
+        slidesPerView: 2.6,
         simulateTouch: false,
         watchSlidesVisibility: true,
-        spaceBetween: 0,
-        loop: true,
-        centeredSlides: true,
+        spaceBetween: (6 * $nowfz),
         navigation: {
             nextEl: '.product--next',
             prevEl: '.product--prev',
+        },
+        slidesOffsetBefore: marginLeftWrapper + paddingLeftWrapper,
+        slidesOffsetAfter: marginLeftWrapper + paddingLeftWrapper,
+        on: {
+            resize: function () {
+                marginLeftWrapper = parseInt(wrapper.css('marginLeft'))
+                $nowfz = parseInt($('html').css('font-size'))
+                paddingLeftWrapper = parseInt(wrapper.css('paddingLeft'))
+                this.params.slidesOffsetBefore = marginLeftWrapper + paddingLeftWrapper
+                this.params.slidesOffsetAfter = marginLeftWrapper + paddingLeftWrapper
+                this.update()
+            },
+            transitionStart: function () {
+                if (isMobile != true) {
+                    $('.product-slider').addClass('trans');
+                }
+              
+            },
+            transitionEnd: function () {
+                if (isMobile != true) {
+                    $('.product-slider').removeClass('trans');
+                }
+              
+            },
         },
     });
 	
@@ -653,18 +633,45 @@ var sliderDiscover = new Swiper('.discover-slider', {
     firstDay: 0
 }; 
 
-$('.field--age').datepicker({
- minView: 'days',
+$('.pickeryear').datepicker({
+ minView: 'years',
  language: 'en',
- maxDate: new Date(),
+ classes: 'dateyear',
+  dateFormat: 'yyyy',
         view: 'years',
        onSelect: function(fd, d, picker) {
         console.log(fd)
-        $split = fd.split('.')
-        $('.pickerday').val($split[1])
-        $('.pickermonth').val($split[0])
-        $('.pickeryear').val($split[2])
-        $('.checkage').attr('data-date', fd)
+        $('.pickeryear').val(fd)
+        $('.checkage').attr('data-years', fd)
+
+    }
+})
+
+$('.pickermonth').datepicker({
+ minView: 'months',
+ language: 'en',
+        view: 'months',
+         dateFormat: 'mm',
+       onSelect: function(fd, d, picker) {
+        console.log(fd)
+        $('.pickermonth').val(fd)
+        $('.checkage').attr('data-months', fd)
+
+    }
+})
+
+$('.pickerday').datepicker({
+ minView: 'days',
+ language: 'en',
+  firstDay: 6,
+  dateFormat: 'd',
+ startDate: new Date(2011, 0, 1, 0, 0, 0, 0),
+  showOtherMonths: false,
+ selectOtherMonths: false,
+        view: 'days',
+       onSelect: function(fd, d, picker) {
+        $('.pickerday').val(fd)
+        $('.checkage').attr('data-days', fd)
 
     }
 })
@@ -682,14 +689,11 @@ if ($useragecheck != 'ok') {
 
 $('.checkage').on('submit', function(event) {
     event.preventDefault();
-    $selectdate = $(this).attr('data-date')
+    $selectdate = $(this).attr('data-months') +'.'+$(this).attr('data-days')+'.'+$(this).attr('data-years')
     var dateB = moment($selectdate, "MM.DD.YYYY");
     var dateC = moment();
     $minus = dateC.diff(dateB, 'year')
     $fields = $('.checkage').find('.field--age')
-
-    console.log(dateC)
-    
     if ($minus >= 18) {
         $.fancybox.close();
         document.cookie = "userage=ok"
@@ -743,7 +747,7 @@ $('.form-contact').on('submit', function(event) {
         th = _form.serialize(),
         form_url = _form.attr('action');
      $.ajax({ 
-            url : 'вставь тут обработчик',
+            url : form_url,
             data : th,
             cache: false,
             type : 'POST',
@@ -760,7 +764,7 @@ $('select').styler({
 
    $('body').on('change', 'select[name="country_partner"]', function(event) {
         // console.log("change")
-        var url = $(this).data('get_reg_url');
+        var url = $(this).data('refresh_url');
         var country_id = $(this).val();
         var data = {
             "_token":$('meta[name="csrf-token"]').attr('content'),
@@ -772,13 +776,39 @@ $('select').styler({
             data: data,
             url: url,
             success: function(data) {
-                $('select[name="region_partner"]').html(data).trigger('refresh')
-                // console.log(data)
-
-
+                $('select[name="region_partner"]').attr('disabled', false).html('<option></option>' + data).trigger('refresh')
             },
         });
     });
+
+   $('body').on('change', 'select[name="region_partner"]', function(event) {
+
+
+         // не знаю что там нужно передавать, уберёшь, что не нужно или изменишь
+
+
+        var url = $(this).data('get_partner_url'),
+            country_id = $('select[name="country_partner"]').val(),
+            region_id = $(this).val();
+
+           
+
+        var data = {
+            "_token":$('meta[name="csrf-token"]').attr('content'),
+            "country_id":country_id,
+            "region_id":region_id,
+        };
+
+        $.ajax({
+            type: "POST",
+            data: data,
+            url: url,
+            success: function(data) {
+                $('.contact-partner__answer').empty().append(data).slideDown('fast');
+            },
+        });
+
+   })
 
    $('body').on('click', '.link--play', function(event) {
        event.preventDefault();

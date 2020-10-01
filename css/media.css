@@ -142,6 +142,9 @@
   .section-category .category-pagination ul li .link { color: rgba(0, 0, 0, 0.4); font-family: "FiraGO", sans-serif; font-size: 1.6rem; font-weight: 400; }
   .section-category .category-pagination ul li .link.pen { letter-spacing: .5rem; }
   .section-category .category-pagination ul li.active .link { color: #000; }
+  .section-category .category-pagination ul li.prev .link { width: .7rem; height: 1.8rem; }
+  .section-category .category-pagination ul li.prev .link svg { width: 100%; height: 100%; display: block; }
+  .section-category .category-pagination ul li.prev .link svg path { fill: #161c21; }
   .section-category .category-pagination ul li.next .link { width: .7rem; height: 1.8rem; }
   .section-category .category-pagination ul li.next .link svg { width: 100%; height: 100%; display: block; }
   .section-category .category-pagination ul li.next .link svg path { fill: #161c21; }
@@ -221,6 +224,7 @@
   .section-header .header-submenu { display: none; }
   .section-header .header-lang { display: none; }
   .section-header.black .header { padding: 1.5rem 0; }
+  .section-header.black .header-content .link--logo { margin-top: 0; }
   .section-header.black .header .link--mobile svg path { stroke: #161c21; }
   .section-header.header-special .header .link--mobile svg path { stroke: #fff; }
   .section-related { padding: 3rem 0 5rem 0; }
