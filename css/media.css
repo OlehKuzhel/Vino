@@ -202,16 +202,23 @@
   .section-blog .blog-item__date .p { font-size: 1.6rem; }
   .section-vertical { padding-top: 0; padding-bottom: 5rem; }
   .section-vertical .wrapper { padding: 0; }
-  .section-vertical .vertical-pagination { display: none; }
+  .section-vertical .iwts-bg1::before { content: none; }
+  .section-vertical .iwts_container { display: block; }
+  .section-vertical .iwts_images { display: none; }
+  .section-vertical .iwts_contents { width: 100%; margin-left: 0; max-width: 100%; }
+  .section-vertical .iwts_content { margin-bottom: 3.5rem; height: auto; }
+  .section-vertical .iwts_content:last-child { margin-bottom: 0; }
+  .section-vertical .iwts_content .w100 { height: auto; }
+  .section-vertical .vertical-navigation { display: none; }
   .section-vertical .vertical-slider { height: auto; }
   .section-vertical .vertical-slider .swiper-wrapper { -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }
-  .section-vertical .vertical-slide { margin-bottom: 2.5rem; }
+  .section-vertical .vertical-slide { padding-top: 0; }
   .section-vertical .vertical-slide:last-child { margin-bottom: 0; }
-  .section-vertical .vertical-slide__grid { grid-template-areas: 'title' 'photo' 'text'; grid-template-columns: 1fr; grid-template-rows: 1fr; grid-column-gap: 0; grid-row-gap: 0; }
+  .section-vertical .vertical-slide__grid { padding-left: 0; grid-template-areas: 'title' 'photo' 'text'; grid-template-columns: 1fr; grid-template-rows: 1fr; grid-column-gap: 0; grid-row-gap: 0; }
   .section-vertical .vertical-slide__grid .h4 { font-size: 2.7rem; padding: 0 1.5rem; margin-bottom: 2rem; }
   .section-vertical .vertical-slide__grid .h4:after { bottom: .25rem; width: -webkit-calc(100% - 3rem); width: calc(100% - 3rem); left: 1.5rem; }
   .section-vertical .vertical-slide__grid .p-v { margin-top: 2rem; padding: 0 3rem; font-size: 1.6rem; line-height: 2rem; }
-  .section-vertical .vertical-slide__photo { height: 37rem; width: 100%; }
+  .section-vertical .vertical-slide__photo { height: 37rem; width: 100%; display: block; }
   .section-vertical .vertical-slide__photo img { height: 100%; -o-object-fit: cover; object-fit: cover; width: 100%; }
   .section-trademarkcat { padding: 12.5rem 0 4.5rem 0; }
   .section-trademarkcat .trademarkcat-item__photo { height: 20rem; }

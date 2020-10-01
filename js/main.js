@@ -880,7 +880,7 @@ $('select').styler({
    });
 
 
-
+if (isMobile == false) {
    function b() {
             var b = $(".iwts_container"),
                 c = $(".iwts_images"),
@@ -934,6 +934,7 @@ $('select').styler({
                 }
             })
         }
+}
 
 
 });
