@@ -788,7 +788,7 @@ $('select').styler({
             url: url,
             success: function(data) {
                 $.each(data, function(index, el){
-                    if (el != null) {
+                    if (el != null && el != '') {
                         $('.contact-partner__answer').find('.'+index + ' span').text(el)
                         if (index == 'email') {
                             $('.contact-partner__answer').find('.'+index + ' a').attr('href', 'mailto:'+el)
