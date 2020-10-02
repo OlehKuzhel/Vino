@@ -507,6 +507,12 @@ var sliderRelated = new Swiper('.related-slider', {
         clickSlide: false,
         keyboard: false,
         clickOutside: false,
+        afterShow: function(instance, current) {
+            // $('#age').find('select(z);')
+            $('.pickerday').trigger('refresh')
+            $('.pickermonth').trigger('refresh')
+            $('.pickeryear').trigger('refresh')
+        },
     }
 
  opnsFancy = {
@@ -633,61 +639,23 @@ var sliderDiscover = new Swiper('.discover-slider', {
     });
 
 
- $.fn.datepicker.language['en'] = {
-    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-    daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-    daysMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-    months: ['January','February','March','April','May','June', 'July','August','September','October','November','December'],
-    monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    today: 'Today',
-    clear: 'Clear',
-    dateFormat: 'mm.dd.yyyy',
-    timeFormat: 'hh:ii aa',
-    firstDay: 0
-}; 
 
-$('.pickeryear').datepicker({
- minView: 'years',
- language: 'en',
- classes: 'dateyear',
-  dateFormat: 'yyyy',
-        view: 'years',
-       onSelect: function(fd, d, picker) {
-        console.log(fd)
-        $('.pickeryear').val(fd)
-        $('.checkage').attr('data-years', fd)
 
-    }
-})
+$('body').on('change', 'select.pickeryear', function(event) {
+    event.preventDefault();
+    $('.checkage').attr('data-years', $(this).val())
+});
+$('body').on('change', 'select.pickermonth', function(event) {
+    event.preventDefault();
+    $('.checkage').attr('data-months', $(this).val())
+    /* Act on the event */
+});
+$('body').on('change', 'select.pickerday', function(event) {
+    event.preventDefault();
+    $('.checkage').attr('data-days', $(this).val())
+    /* Act on the event */
+});
 
-$('.pickermonth').datepicker({
- minView: 'months',
- language: 'en',
-        view: 'months',
-         dateFormat: 'mm',
-       onSelect: function(fd, d, picker) {
-        console.log(fd)
-        $('.pickermonth').val(fd)
-        $('.checkage').attr('data-months', fd)
-
-    }
-})
-
-$('.pickerday').datepicker({
- minView: 'days',
- language: 'en',
-  firstDay: 6,
-  dateFormat: 'd',
- startDate: new Date(2011, 0, 1, 0, 0, 0, 0),
-  showOtherMonths: false,
- selectOtherMonths: false,
-        view: 'days',
-       onSelect: function(fd, d, picker) {
-        $('.pickerday').val(fd)
-        $('.checkage').attr('data-days', fd)
-
-    }
-})
 
 var $useragecheck = get_cookie ( "userage" );
 if ($useragecheck != 'ok') {
@@ -706,7 +674,8 @@ $('.checkage').on('submit', function(event) {
     var dateB = moment($selectdate, "MM.DD.YYYY");
     var dateC = moment();
     $minus = dateC.diff(dateB, 'year')
-    $fields = $('.checkage').find('.field--age')
+    $fields = $('.checkage').find('.field--select')
+    console.log(dateB)
     if ($minus >= 18) {
         $.fancybox.close();
         document.cookie = "userage=ok"
