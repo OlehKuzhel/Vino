@@ -6525,15 +6525,15 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
 .section-vertical .vertical-slider { height: 77rem; width: 100%; }
 
-.section-vertical .vertical-slide { padding-top: 20vh; }
+.section-vertical .vertical-slide { padding-top: 20vh; height: 100vh; }
 
-.section-vertical .vertical-slide__grid { display: grid; grid-template-columns: 1fr; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; grid-template-areas: 'title' 'text'; grid-template-rows: 1fr; padding-left: 5rem; }
+.section-vertical .vertical-slide__grid { display: grid; grid-template-columns: 1fr; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; grid-template-areas: 'title' 'text'; grid-template-rows: auto 1fr; padding-left: 5rem; height: 100%; padding-bottom: 20vh; }
 
 .section-vertical .vertical-slide__grid .h4 { grid-area: title; color: #161c21; font-family: "Arapey", serif; font-size: 6.5rem; font-weight: 400; position: relative; }
 
 .section-vertical .vertical-slide__grid .h4:after { width: -webkit-calc(100% - 1.5rem); width: calc(100% - 1.5rem); bottom: .5rem; left: 0; height: 1px; background: #161c21; content: ''; position: absolute; }
 
-.section-vertical .vertical-slide__grid .p-v { grid-area: text; margin-top: 4rem; color: #000000; font-family: "FiraGO", sans-serif; font-size: 2rem; font-weight: 400; line-height: 3rem; padding-right: 8rem; }
+.section-vertical .vertical-slide__grid .p-v { grid-area: text; color: #000000; font-family: "FiraGO", sans-serif; font-size: 2rem; font-weight: 400; line-height: 3rem; margin-top: auto; padding-right: 8rem; }
 
 .section-vertical .vertical-slide__photo { grid-area: photo; width: 100%; height: 100%; display: none; }
 
@@ -7275,7 +7275,7 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
 .section-evvideo .evvideo-frame__preload:after { position: absolute; top: 0; left: 0; width: 100%; height: 100%; -webkit-transition: 0.24s ease; -o-transition: 0.24s ease; transition: 0.24s ease; content: ''; background: rgba(233, 233, 233, 0.32); }
 
-.section-evvideo .evvideo-frame__preload video { width: 100%; height: 100%; -o-object-fit: cover; object-fit: cover; }
+.section-evvideo .evvideo-frame__preload img { width: 100%; height: 100%; -o-object-fit: cover; object-fit: cover; }
 
 .section-evvideo .evvideo-frame__preload.played:after { opacity: 0; }
 

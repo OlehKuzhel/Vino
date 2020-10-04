@@ -810,43 +810,43 @@ $('select').styler({
 
    })
 
-   $('body').on('click', '.link--play', function(event) {
-       event.preventDefault();
-       $this = $(this)
-       $video_id = $this.attr('href');
-       $this.toggleClass('active');
-       if ($($video_id).parent().hasClass('played')) {
-            $($video_id).get(0).pause();
-            $($video_id).parent().removeClass('played');
-            $this.removeClass('nonvis')
-       } else {
-            $($video_id).parent().addClass('played');
-            $($video_id).get(0).play();
-            setTimeout(function(){
-                $this.addClass('nonvis')
-            }, 1500)
-       }
-   });
+   // $('body').on('click', '.link--play', function(event) {
+   //     event.preventDefault();
+   //     $this = $(this)
+   //     $video_id = $this.attr('href');
+   //     $this.toggleClass('active');
+   //     if ($($video_id).parent().hasClass('played')) {
+   //          $($video_id).get(0).pause();
+   //          $($video_id).parent().removeClass('played');
+   //          $this.removeClass('nonvis')
+   //     } else {
+   //          $($video_id).parent().addClass('played');
+   //          $($video_id).get(0).play();
+   //          setTimeout(function(){
+   //              $this.addClass('nonvis')
+   //          }, 1500)
+   //     }
+   // });
 
-   $('body').on('click', '.evvideo-frame__preload', function(event) {
-       event.preventDefault();
-       $play_link = $(this).parent().find('.link--play');
-       $video_id = $play_link.attr('href');
-       if ($(this).hasClass('played')) {
-           $($video_id).get(0).pause();
-           $play_link.removeClass('nonvis active')
-           $(this).removeClass('played');
-       } else {
-           $($video_id).get(0).play();
-           $play_link.addClass('active')
-            setTimeout(function(){
-                 $play_link.addClass('nonvis')
-            }, 1500)
-           $(this).addClass('played');
-       }
+   // $('body').on('click', '.evvideo-frame__preload', function(event) {
+   //     event.preventDefault();
+   //     $play_link = $(this).parent().find('.link--play');
+   //     $video_id = $play_link.attr('href');
+   //     if ($(this).hasClass('played')) {
+   //         $($video_id).get(0).pause();
+   //         $play_link.removeClass('nonvis active')
+   //         $(this).removeClass('played');
+   //     } else {
+   //         $($video_id).get(0).play();
+   //         $play_link.addClass('active')
+   //          setTimeout(function(){
+   //               $play_link.addClass('nonvis')
+   //          }, 1500)
+   //         $(this).addClass('played');
+   //     }
        
 
-   });
+   // });
 
 
 if (isMobile == false) {
