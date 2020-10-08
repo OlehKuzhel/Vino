@@ -370,7 +370,7 @@ var sliderRelated = new Swiper('.related-slider', {
 
      var sliderProduct = new Swiper('.product-slider', {
         speed: 800,
-        slidesPerView: 2.6,
+        slidesPerView: 'auto',
         simulateTouch: false,
         watchSlidesVisibility: true,
         spaceBetween: (6 * $nowfz),
@@ -381,6 +381,11 @@ var sliderRelated = new Swiper('.related-slider', {
         slidesOffsetBefore: marginLeftWrapper + paddingLeftWrapper,
         slidesOffsetAfter: marginLeftWrapper + paddingLeftWrapper,
         on: {
+            init: function() {
+                if (this.slides.length <=2) {
+                    $('.product--next').addClass('swiper-button-disabled').hide()
+                }
+            },
             resize: function () {
                 marginLeftWrapper = parseInt(wrapper.css('marginLeft'))
                 $nowfz = parseInt($('html').css('font-size'))
@@ -658,12 +663,14 @@ $('body').on('change', 'select.pickerday', function(event) {
 
 
 var $useragecheck = get_cookie ( "userage" );
+if ($('body').hasClass('openpopup')) {
 if ($useragecheck != 'ok') {
-    $.fancybox.open({
-        src: '#age',
-        type: 'inline',
-        opts: opnsage,
-    });
+        $.fancybox.open({
+            src: '#age',
+            type: 'inline',
+            opts: opnsage,
+        });
+    }
 }
 
     
